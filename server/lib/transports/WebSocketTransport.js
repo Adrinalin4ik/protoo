@@ -6,12 +6,14 @@ const logger = new Logger('WebSocketTransport');
 
 class WebSocketTransport extends EnhancedEventEmitter
 {
-	constructor(connection)
+	constructor(connection, options)
 	{
 		super(logger);
 
 		logger.debug('constructor()');
 
+		this.requestTimeout = options.requestTimeout;
+		
 		// Closed flag.
 		// @type {Boolean}
 		this._closed = false;

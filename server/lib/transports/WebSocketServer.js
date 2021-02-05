@@ -21,6 +21,10 @@ class WebSocketServer extends EnhancedEventEmitter
 
 		logger.debug('constructor() [option:%o]', options);
 
+		this.requestTimeout = options.requestTimeout || 30000;
+
+		delete options.requestTimeout;
+
 		// Merge some settings into the given options.
 		options = Object.assign(
 			{
@@ -110,7 +114,9 @@ class WebSocketServer extends EnhancedEventEmitter
 					const connection = request.accept(WS_SUBPROTOCOL, request.origin);
 
 					// Create a new Protoo WebSocket transport.
-					const transport = new WebSocketTransport(connection);
+					const transport = new WebSocketTransport(connection, {
+						requestTimeout : this.requestTimeout
+					});
 
 					logger.debug('_onRequest() | accept() called');
 
