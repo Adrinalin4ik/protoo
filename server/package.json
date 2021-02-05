@@ -1,13 +1,13 @@
 {
-  "name": "protoo-server",
+  "name": "protoo-server-extended",
   "version": "4.0.6",
   "description": "protoo Node.js server module",
-  "author": "Iñaki Baz Castillo <ibc@aliax.net>",
+  "author": "Alexey Panfilkin",
   "homepage": "https://protoo.versatica.com",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/ibc/protoo.git"
+    "url": "https://github.com/Adrinalin4ik/protoo.git"
   },
   "main": "lib/index.js",
   "keywords": [
